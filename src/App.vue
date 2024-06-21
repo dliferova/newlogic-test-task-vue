@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {UiBtn} from "./components/ui/btn";
+import { UiBtn } from "./components/winduum/ui/btn"
 </script>
 
 <template>
@@ -8,5 +8,4 @@ import {UiBtn} from "./components/ui/btn";
   <UiBtn class="rounded-full">Button rounder</UiBtn>
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>
