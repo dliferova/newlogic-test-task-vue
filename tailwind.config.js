@@ -1,19 +1,10 @@
-import winduum from 'winduum'
+import winduum from "winduum"
 
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [
-    "./node_modules/winduum/src/**/*.js",
-    "./index.html",
-    "./src/**/*.{vue,js,ts,jsx,tsx}",
-  ],
+  content: ["./node_modules/winduum/src/**/*.js", "./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {}
   },
-  plugins: [
-      winduum({
-
-      })
-  ],
+  plugins: [winduum({})]
 }
-
