@@ -2,21 +2,34 @@
 import { Card } from "./winduum/card"
 import { UiBtn } from "./winduum/ui/btn"
 import ArrowIcon from "./icons/ArrowUturnIcon.vue"
+import { orderDataType } from "../mock/OrdersData.ts"
+defineProps<{
+  order: orderDataType
+}>()
 </script>
 
 <template>
   <Card class="mb-8 text-base">
     <div class="flex flex-row flex-between mb-6">
-      <p class="text-xl font-semibold">Čislo objednávky: 2200245834</p>
-      <p class="text-xs leading-5 font-semibold text-[#16a34a]">Zaplaceno</p>
+      <p class="text-xl font-semibold">Čislo objednávky: {{ order.orderNumber }}</p>
+      <p
+        v-if="order.isPaid"
+        class="text-xs leading-5 font-semibold text-green"
+      >
+        Zaplaceno
+      </p>
     </div>
     <div class="flex flex-col md:flex-row flex-between mb-6">
       <div class="flex flex-col">
-        <p>Datum objednávky: 6. 12. 2022</p>
-        <p>Cena celkem: 1 500 Kč</p>
+        <p>
+          Datum objednávky: <span class="text-lighter-text-color">{{ order.date }}</span>
+        </p>
+        <p>
+          Cena celkem: <span class="text-lighter-text-color">{{ order.price }}</span>
+        </p>
       </div>
       <div class="flex flex-col md:items-end">
-        <p class="text-[#0ea5e9]">Potřebujete poradit?</p>
+        <p class="text-blue">Potřebujete poradit?</p>
         <p>314 004 540 (po-pá 8:00-16:00)</p>
       </div>
     </div>

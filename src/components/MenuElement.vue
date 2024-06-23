@@ -15,7 +15,7 @@ defineProps<{
     <div class="flex flex-col">
       <div class="text-center mb-6">
         <p class="text-xl font-semibold">Daniil Filatov</p>
-        <p class="text-sm text-slate-400">daniil.filatov@newlogic.cz</p>
+        <p class="text-sm text-lighter-text-color">daniil.filatov@newlogic.cz</p>
       </div>
 
       <ul class="flex flex-col mb-8">

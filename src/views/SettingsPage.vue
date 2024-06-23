@@ -9,7 +9,17 @@ const formData = ref({
   name: "",
   surname: "",
   email: "",
-  phone: ""
+  phone: "",
+  company: "",
+  street: "",
+  city: "",
+  postalCode: "",
+  ic: "",
+  dic: "",
+  invoiceContactName: "",
+  invoiceContactSurname: "",
+  invoiceContactPhone: "",
+  invoiceContactEmail: ""
 })
 
 const loading = ref(false)
@@ -67,42 +77,52 @@ const submitFormImitation = () => {
             <InputItem
               label="Název firmy"
               id="company"
+              v-model="formData.company"
             />
             <InputItem
               label="Ulice"
               id="street"
+              v-model="formData.street"
             />
             <InputItem
               label="Město"
               id="city"
+              v-model="formData.city"
             />
             <InputItem
               label="PSČ"
               id="postal-code"
+              v-model="formData.postalCode"
             />
             <InputItem
               label="IČ"
               id="ič"
+              v-model="formData.ic"
             />
             <InputItem
               label="DIČ"
               id="dič"
+              v-model="formData.dic"
             />
             <InputItem
               label="Jméno"
               id="user-name"
+              v-model="formData.invoiceContactName"
             />
             <InputItem
               label="Přijmení"
               id="user-surname"
+              v-model="formData.invoiceContactSurname"
             />
             <InputItem
               label="Telefon"
               id="user-phone"
+              v-model="formData.invoiceContactPhone"
             />
             <InputItem
               label="Email"
               id="user-email"
+              v-model="formData.invoiceContactEmail"
             />
           </div>
           <UiBtn type="submit"> Uložit změny</UiBtn>

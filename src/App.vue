@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import NotFoundPage from "./views/NotExistedPage.vue"
 import { computed, ref } from "vue"
-import routes from "./mock/routes.ts"
+import routes from "./mock/Routes.ts"
 import Text from "./components/winduum/ui/text/Text.vue"
 import MenuElement from "./components/MenuElement.vue"
 
@@ -17,7 +17,7 @@ const currentRoute = computed(() => {
 </script>
 
 <template>
-  <div class="flex flex-col lg:h-screen bg-slate-50">
+  <div class="flex flex-col lg:h-screen bg-body-bg text-main-text-color">
     <div class="container mx-auto px-4 lg:px-8 xl:px-12">
       <div class="text-center py-4 md:text-start xl:py-8">
         <Text>

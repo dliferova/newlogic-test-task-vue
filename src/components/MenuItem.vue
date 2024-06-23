@@ -14,8 +14,8 @@ defineProps<{
   <li
     class="min-w-48 xl:min-w-64 rounded-md text-sm font-semibold mb-2"
     :class="{
-      'bg-[#3B82F6] text-white': isActive,
-      'bg-[#F3F4F6] text-black': !isActive
+      'bg-primary-accent text-white': isActive,
+      'bg-grey text-black': !isActive
     }"
   >
     <a
