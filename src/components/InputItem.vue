@@ -1,11 +1,18 @@
 <script setup lang="ts">
-import Label from "./winduum/ui/label/Label.vue"
-
 defineProps<{
   id: string
   label: string
-  vModel: string
+  modelValue: string | number
 }>()
+
+const emit = defineEmits<{
+  (e: "update:modelValue", value: string | number): void
+}>()
+
+const onInput = (event: Event) => {
+  const input = event.target as HTMLInputElement
+  emit("update:modelValue", input.value)
+}
 </script>
 
 <template>
@@ -14,7 +21,9 @@ defineProps<{
       <input
         :id="id"
         type="text"
-        :v-model="vModel"
+        :value="modelValue"
+        @input="onInput"
+        v-bind="$attrs"
         placeholder=" "
         required
       />

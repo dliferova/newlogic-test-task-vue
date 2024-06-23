@@ -9,10 +9,8 @@ const invoice: InvoiceDataType = invoicesData[0]
 <template>
   <Table>
     <table class="table-auto text-lighter-text-color">
-      <thead
-        class="whitespace-nowrap text-main-secondary font-bold border-b-[1px] border-[#DFE2E2]"
-      >
-        <tr class="p-4">
+      <thead class="whitespace-nowrap text-main-secondary font-bold border-b border-border-color">
+        <tr class="text-sm">
           <th>Číslo faktury</th>
           <th>Číslo objednávky</th>
           <th class="text-center">Cena celkem</th>
@@ -23,11 +21,10 @@ const invoice: InvoiceDataType = invoicesData[0]
         <tr
           v-for="index in 9"
           :key="`${invoice.id} - ${index}`"
-          class="border-0"
         >
           <td>{{ invoice.number }}</td>
           <td>{{ invoice.orderNumber }}</td>
-          <td class="text-center">-{{ invoice.price }}</td>
+          <td class="text-center">-{{ invoice.price }} {{ invoice.priceCurrency }}</td>
           <td class="text-end"><DownloadButton /></td>
         </tr>
       </tbody>
@@ -35,4 +32,12 @@ const invoice: InvoiceDataType = invoicesData[0]
   </Table>
 </template>
 
-<style scoped></style>
+<style scoped>
+tbody tr {
+  border: none;
+}
+
+tbody tr td {
+  padding: 19px 5px 7px 0;
+}
+</style>

@@ -34,8 +34,9 @@ const submitFormImitation = () => {
   setTimeout(() => {
     loading.value = false
 
-    if (Math.random() > 0.5) {
+    if (Math.random() > 0.8) {
       success.value = true
+      console.log("Successful form submision, data: ", formData)
     } else {
       error.value = true
     }
@@ -44,12 +45,12 @@ const submitFormImitation = () => {
 </script>
 
 <template>
-  <Card>
-    <div class="pr-3 pt-3 pb-4 pl-3 flex flex-col">
+  <Card class="p-6">
+    <div class="flex flex-col">
       <div>
         <form @submit.prevent="submitFormImitation">
           <p class="text-xl font-semibold mb-8">Kontaktní údaje</p>
-          <div class="grid md:grid-cols-2 gap-3 mb-8">
+          <div class="grid md:grid-cols-2 gap-3 mb-6">
             <InputItem
               label="Jméno"
               id="user-name"
@@ -73,7 +74,7 @@ const submitFormImitation = () => {
           </div>
 
           <p class="mb-8 text-xl font-semibold">Fakturační údaje</p>
-          <div class="grid md:grid-cols-2 gap-3 mb-8">
+          <div class="grid md:grid-cols-2 gap-3 mb-6">
             <InputItem
               label="Název firmy"
               id="company"
@@ -125,23 +126,29 @@ const submitFormImitation = () => {
               v-model="formData.invoiceContactEmail"
             />
           </div>
-          <UiBtn type="submit"> Uložit změny</UiBtn>
+          <UiBtn
+            class="lg"
+            type="submit"
+            :disabled="loading"
+          >
+            Uložit změny
+          </UiBtn>
         </form>
         <div
           v-if="loading"
-          class="ui-badge muted accent-info"
+          class="ui-badge muted accent-info mt-4"
         >
           Sending data...
         </div>
         <div
           v-if="success"
-          class="ui-badge muted accent-success"
+          class="ui-badge muted accent-success mt-4"
         >
           Form submitted successfully!
         </div>
         <div
           v-if="error"
-          class="ui-badge muted accent-error"
+          class="ui-badge muted accent-error mt-4"
         >
           There was an error submitting the form. Please try again
         </div>

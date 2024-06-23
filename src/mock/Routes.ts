@@ -5,8 +5,9 @@ import InvoicesPage from "../views/InvoicesPage.vue"
 import LikeIcon from "../components/icons/LikeIcon.vue"
 import SettingIcon from "../components/icons/SettingIcon.vue"
 import SettingsPage from "../views/SettingsPage.vue"
+import { Component } from "vue"
 
-export default [
+const routes: RouteType[] = [
   {
     id: 1,
     name: "Moje objednávky",
@@ -50,3 +51,13 @@ export default [
     component: SettingsPage
   }
 ]
+
+export interface RouteType {
+  id: number
+  name: string
+  url: string
+  svgContent: Component
+  component: Component | null
+}
+
+export default routes

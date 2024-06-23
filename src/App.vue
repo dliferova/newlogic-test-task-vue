@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import NotFoundPage from "./views/NotExistedPage.vue"
+import NotFoundPage from "./views/NotFoundPage.vue"
 import { computed, ref } from "vue"
 import routes from "./mock/Routes.ts"
 import Text from "./components/winduum/ui/text/Text.vue"
@@ -17,14 +17,14 @@ const currentRoute = computed(() => {
 </script>
 
 <template>
-  <div class="flex flex-col lg:h-screen bg-body-bg text-main-text-color">
+  <div class="flex flex-col lg:h-screen bg-body-bg">
     <div class="container mx-auto px-4 lg:px-8 xl:px-12">
       <div class="text-center py-4 md:text-start xl:py-8">
         <Text>
           <h1>{{ currentRoute?.name || "Page not found" }}</h1>
         </Text>
       </div>
-      <div class="flex flex-col lg:flex-row gap-x-8 2xl:gap-x-16">
+      <div class="flex flex-col lg:flex-row gap-x-8">
         <div class="mb-6 lg:mb-0">
           <MenuElement
             :routes="routes"
